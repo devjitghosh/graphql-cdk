@@ -29,6 +29,6 @@
     "cdk.out"
   ],
   "include": [
-    "lib\\resources\\demoLambda.ts"
+    "src/demoLambda.ts"
   ]
 }
