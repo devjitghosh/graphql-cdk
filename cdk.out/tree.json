@@ -105,7 +105,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "41a03f7e07b018f633e1cee4890284b782a75c8e2a0e4a0a05d5b41949022d2e.zip"
+                      "s3Key": "76213f02593e75c73cd2514908201cc8ffb8f6066626c287e07dda9b19dc8390.zip"
                     },
                     "functionName": "cdk-lambda",
                     "handler": "demoLambda.handler",
