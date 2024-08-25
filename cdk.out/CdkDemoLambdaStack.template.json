@@ -41,8 +41,9 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "5cbf61af84efaf70dae583c3d5e6ff22f6fc30fe6a7c090a6e67b321cfacdb16.zip"
+     "S3Key": "41a03f7e07b018f633e1cee4890284b782a75c8e2a0e4a0a05d5b41949022d2e.zip"
     },
+    "FunctionName": "cdk-lambda",
     "Handler": "demoLambda.handler",
     "Role": {
      "Fn::GetAtt": [
@@ -57,7 +58,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "CdkDemoLambdaStack/demo-cdk-lambda/Resource",
-    "aws:asset:path": "asset.5cbf61af84efaf70dae583c3d5e6ff22f6fc30fe6a7c090a6e67b321cfacdb16",
+    "aws:asset:path": "asset.41a03f7e07b018f633e1cee4890284b782a75c8e2a0e4a0a05d5b41949022d2e",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -71,7 +72,7 @@
     "aws:cdk:path": "CdkDemoLambdaStack/demo-api-gateway/Resource"
    }
   },
-  "demoapigatewayDeploymentA5CD119933349beb3acc68a012bf09a3877c5194": {
+  "demoapigatewayDeploymentA5CD11990f5f9ef00bf26851415f3c0ab2585ffa": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "Automatically created by the RestApi construct",
@@ -91,7 +92,7 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "demoapigatewayDeploymentA5CD119933349beb3acc68a012bf09a3877c5194"
+     "Ref": "demoapigatewayDeploymentA5CD11990f5f9ef00bf26851415f3c0ab2585ffa"
     },
     "RestApiId": {
      "Ref": "demoapigateway07197D4F"
@@ -153,7 +154,7 @@
        },
        "/",
        {
-        "Ref": "demoapigatewayDeploymentStageprod458BC5CD"
+        "Ref": "Stage0E8C2AF5"
        },
        "/GET/hello"
       ]
@@ -245,6 +246,35 @@
    },
    "Metadata": {
     "aws:cdk:path": "CdkDemoLambdaStack/demo-api-gateway/Default/hello/GET/Resource"
+   }
+  },
+  "Deployment37BBD5E4d395f8d73c592e8cba153c51c4a4a823": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "RestApiId": {
+     "Ref": "demoapigateway07197D4F"
+    }
+   },
+   "DependsOn": [
+    "demoapigatewayhelloGET767E74A2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "CdkDemoLambdaStack/Deployment/Resource"
+   }
+  },
+  "Stage0E8C2AF5": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "DeploymentId": {
+     "Ref": "Deployment37BBD5E4d395f8d73c592e8cba153c51c4a4a823"
+    },
+    "RestApiId": {
+     "Ref": "demoapigateway07197D4F"
+    },
+    "StageName": "production"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkDemoLambdaStack/Stage/Resource"
    }
   },
   "CDKMetadata": {

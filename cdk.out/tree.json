@@ -105,8 +105,9 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "5cbf61af84efaf70dae583c3d5e6ff22f6fc30fe6a7c090a6e67b321cfacdb16.zip"
+                      "s3Key": "41a03f7e07b018f633e1cee4890284b782a75c8e2a0e4a0a05d5b41949022d2e.zip"
                     },
+                    "functionName": "cdk-lambda",
                     "handler": "demoLambda.handler",
                     "role": {
                       "Fn::GetAtt": [
@@ -184,7 +185,7 @@
                       "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
                       "aws:cdk:cloudformation:props": {
                         "deploymentId": {
-                          "Ref": "demoapigatewayDeploymentA5CD119933349beb3acc68a012bf09a3877c5194"
+                          "Ref": "demoapigatewayDeploymentA5CD11990f5f9ef00bf26851415f3c0ab2585ffa"
                         },
                         "restApiId": {
                           "Ref": "demoapigateway07197D4F"
@@ -282,7 +283,7 @@
                                       },
                                       "/",
                                       {
-                                        "Ref": "demoapigatewayDeploymentStageprod458BC5CD"
+                                        "Ref": "Stage0E8C2AF5"
                                       },
                                       "/GET/hello"
                                     ]
@@ -409,6 +410,62 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_apigateway.RestApi",
+              "version": "2.151.0"
+            }
+          },
+          "Deployment": {
+            "id": "Deployment",
+            "path": "CdkDemoLambdaStack/Deployment",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkDemoLambdaStack/Deployment/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                  "aws:cdk:cloudformation:props": {
+                    "restApiId": {
+                      "Ref": "demoapigateway07197D4F"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                  "version": "2.151.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+              "version": "2.151.0"
+            }
+          },
+          "Stage": {
+            "id": "Stage",
+            "path": "CdkDemoLambdaStack/Stage",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkDemoLambdaStack/Stage/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                  "aws:cdk:cloudformation:props": {
+                    "deploymentId": {
+                      "Ref": "Deployment37BBD5E4d395f8d73c592e8cba153c51c4a4a823"
+                    },
+                    "restApiId": {
+                      "Ref": "demoapigateway07197D4F"
+                    },
+                    "stageName": "production"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                  "version": "2.151.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Stage",
               "version": "2.151.0"
             }
           },

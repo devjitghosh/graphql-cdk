@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4422c4c80c0e2f34dc2d6c99df5219cb66267c168f42e0734976ea2ea17912da.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7ad247970ed5fb6f6a3e0f554369285b5ca3ad2082f5409082d1814484cc03d5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -55,7 +55,7 @@
         "/CdkDemoLambdaStack/demo-api-gateway/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "demoapigatewayDeploymentA5CD119933349beb3acc68a012bf09a3877c5194"
+            "data": "demoapigatewayDeploymentA5CD11990f5f9ef00bf26851415f3c0ab2585ffa"
           }
         ],
         "/CdkDemoLambdaStack/demo-api-gateway/DeploymentStage.prod/Resource": [
@@ -92,6 +92,18 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "demoapigatewayhelloGET767E74A2"
+          }
+        ],
+        "/CdkDemoLambdaStack/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Deployment37BBD5E4d395f8d73c592e8cba153c51c4a4a823"
+          }
+        ],
+        "/CdkDemoLambdaStack/Stage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Stage0E8C2AF5"
           }
         ],
         "/CdkDemoLambdaStack/CDKMetadata/Default": [
